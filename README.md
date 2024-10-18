@@ -1,0 +1,1 @@
+A ideia do projeto é criar uma calculadora de polinômios usando as boas práticas de programação e o paradigma da programação orientada a objetos(POO) e usar como uma avaliação na disciplina de Programação Avançada (DCA3303) da Universidade Federal do Rio Grande do Norte (UFRN)
