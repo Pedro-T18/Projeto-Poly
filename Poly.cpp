@@ -50,7 +50,6 @@ Poly::Poly(const int& i) : grau(i)    //construtor específico da classe
         a=new double[grau+1];   //alocando recursos para armazenar nada mais nada menos que
         //a quantidade correta de coeficientes
         a[0] = 0.0; //atribuindo 0.0 ao único coeficiente desse polinômio como manda a especificação
-
     }
     else if(grau>0) //testa se o grau é positivo
     {
@@ -87,6 +86,7 @@ Poly& Poly::operator=(const Poly& cpy)   //sobrecarga do operador =
                 a[i] = cpy.a[i];    //copia os valores de temp para o objeto em que o método está atuando
             }
     }
+
     return *this;   //permite o encadeamento de operadores = usando referências constantes
 }
 Poly& Poly::operator=(Poly&& mov)  //sobrecarga do operador =
@@ -457,6 +457,32 @@ int i,j,pos;
             j--;
         }
         return temp;
+    }
+    return prov;
+}
+Poly Poly::operator*(const Poly& other) const
+{
+    if(this->empty()) return *this;
+    if(other.empty()) return other;
+    if(this->isZero() && !other.empty()) return *this;
+    if(!this->empty() && other.isZero()) return other;
+
+    int grau_result = this->grau + other.grau;
+
+    Poly prov(grau_result);
+
+    int i,j,k;
+
+    for(k=0;k<prov.grau+1;k++)
+    {
+        prov.a[k]=0;    //inicializa com zeros;
+    }
+    for(i=0;i<this->grau+1;i++)
+    {
+        for(j=0;j<other.grau+1;j++)
+        {
+            prov.a[i+j] += this->a[i] *other.a[j];
+        }
     }
     return prov;
 }

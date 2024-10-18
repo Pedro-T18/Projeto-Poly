@@ -35,9 +35,11 @@ public:
     /// PARTE 3. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     bool ler(const string file_name);   ///método para ler polinômios a partir de arquivos FEITO
     /// PARTE 4. ^^^^^^^^^^^^^^^^^^^
-    Poly operator-() const; ///sobrecarga do operador - unário para
-    Poly operator+(const Poly& p) const;
-    Poly operator-(const Poly& p) const;
+    Poly operator-() const; ///sobrecarga do operador - unário para retornar o negativo do polinômio FEITO
+    Poly operator+(const Poly& other) const;    ///Sobrecarga do operador + binário para somar dois polinômios FEITO
+    Poly operator-(const Poly& other) const;    ///Sobrecarga do operado - binário para subtrair dois polinômios FEITO
+    /// PARTE 5. ^^^^^^^^^^^^^^^^^^^^^^^
+    Poly operator*(const Poly& other) const;
     //-----------------------------------------------------------------------------------------------------------------------------------------------------//
     friend bool operator<=(int& valor, const Poly& p);
     friend bool operator<(int& valor, const Poly& p);
