@@ -167,21 +167,16 @@ bool Poly::isZero() const //método de consulta para verificar se o polinômio é n
 double Poly::getValor(const double& X) const
 {
     int i;
-    double soma_acumulada=0;
-    double potencia = X;
+    double soma_acumulada=0.0;
+    double potencia = 1.0;
 
     if(empty()) return 0.0;    //verifica se o poly é vazio e se sim retorna 0.0 sem emitir mensagem de erro
     else
     {
         for(i=0; i<grau+1; i++)
         {
-            if(i==0) soma_acumulada += a[i];
-            else    //multiplica os termos do polinômio pelo valor fornecido elevado à potência correta e atribui esse valor à variavel soma acumulada
-            {
-                soma_acumulada += a[i]*X;
+                soma_acumulada += a[i]*potencia;
                 potencia*=X;
-            }
-
         }
     }
     return soma_acumulada;

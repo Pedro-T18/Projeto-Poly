@@ -38,8 +38,9 @@ public:
     Poly operator-() const; ///sobrecarga do operador - unário para retornar o negativo do polinômio FEITO
     Poly operator+(const Poly& other) const;    ///Sobrecarga do operador + binário para somar dois polinômios FEITO
     Poly operator-(const Poly& other) const;    ///Sobrecarga do operado - binário para subtrair dois polinômios FEITO
-    /// PARTE 5. ^^^^^^^^^^^^^^^^^^^^^^^
-    Poly operator*(const Poly& other) const;
+    /// PARTE 5. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Poly operator*(const Poly& other) const;    ///sobrecarga do operador * para realizar a multiplicação entre dois polinômios FEITO
+    /// PARTE 6. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     //-----------------------------------------------------------------------------------------------------------------------------------------------------//
     friend bool operator<=(int& valor, const Poly& p);
     friend bool operator<(int& valor, const Poly& p);
